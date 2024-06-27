@@ -2,12 +2,10 @@ module sinewave(
 input wire clk,
 input wire reset,
 
-output reg [31:0]cnt,
-output reg cnt_edge,
-output reg signed [15:0]sin_val
+output wire [31:0]cnt,
+output wire cnt_edge,
+output wire signed [15:0]sin_val
 );
-
-integer freq = 0;
 
 //function calculating sinus
 function real sin;
@@ -32,8 +30,7 @@ real x1,y,y2,y3,y5,y7,sum,sign;
   y3 = y*y2;
   y5 = y3*y2;
   y7 = y5*y2;
-  sum = 1.570794*y - 0.645962*y3 +
-      0.079692*y5 - 0.004681712*y7;
+  sum = 1.570794*y - 0.645962*y3 + 0.079692*y5 - 0.004681712*y7;
   sin = sign*sum;
  end
 endfunction
