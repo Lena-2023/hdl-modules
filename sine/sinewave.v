@@ -1,3 +1,9 @@
+//Код копирован из статьи 
+//https://marsohod.org/verilog/201-sincos
+//Сделано на основе  апроксимации функции 
+//на заданном интервале степенными многочленами.
+
+
 module sinewave(
 input wire clk,
 input wire reset,
